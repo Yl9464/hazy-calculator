@@ -1,22 +1,21 @@
 const calculate = (calculationSteps) => {
   let num1 = []
-  let num2 = []
+  let num2 = ('')
   let operation = ['+', '-', '*', '/']
 
-  if (num1 || num2 < 0) return 8
-
   for (let i = 0; i < operation.length; i++) {
-    const op = operation.length[i]
+    if (operation !== operation[i]) return NaN
 
-    let sum = operation[0]
+    if (operation === operation[2]) {
+      const answer = [num1 * num2]
 
-    if (op) {
-      sum = (num1) + (sum) + (num2)
+      num1 * Number(num2)
+
+      return answer
     }
   }
 
   return (calculate(calculationSteps))
 }
-
 
 module.exports = calculate
