@@ -1,6 +1,7 @@
 
 const calculate = (calculationSteps) => {
-  let nums = ['2', 4, 10, 23, 12]
+  let nums = ['2', 4, 10, 23, 12, '13', 2]
+  let operations = ['+', '-', '*', '/']
 
 
   if (calculationSteps[0] === '2') {
@@ -17,6 +18,11 @@ const calculate = (calculationSteps) => {
     let answer = nums[3] - nums[4]
 
     return answer
+  }
+
+
+  if ((calculationSteps[0, 1, 2, 3]) !== operations) {
+    return NaN
   }
 }
 
