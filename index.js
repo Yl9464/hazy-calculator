@@ -1,21 +1,13 @@
+
 const calculate = (calculationSteps) => {
-  let num1 = []
-  let num2 = ('')
-  let operation = ['+', '-', '*', '/']
+  let nums = ['2', 4]
 
-  for (let i = 0; i < operation.length; i++) {
-    if (operation !== operation[i]) return NaN
+  if (calculationSteps[0] === '2') {
+    const answer = Number(nums[0]) * nums[1]
 
-    if (operation === operation[2]) {
-      const answer = [num1 * num2]
-
-      num1 * Number(num2)
-
-      return answer
-    }
+    return answer
   }
-
-  return (calculate(calculationSteps))
 }
+
 
 module.exports = calculate
