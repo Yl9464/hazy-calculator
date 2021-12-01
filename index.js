@@ -1,19 +1,40 @@
-const calculate = (calculatationSteps) => {
-  const operations = ['+', '-', '*', '/']
+const isNumVal = (item) => {
+  return !isNaN(item) && item !== ''
+}
 
-  for (let i = 0; i < calculatationSteps.length; i++) {
-    if (calculatationSteps[i] === '') parseInt(calculatationSteps[i])
+const valItem = (item) => {
+  const signs = ['+', '-', '*', '/']
 
-    if (calculatationSteps[i] === null) calculatationSteps = 0
+  return isNumVal(item) || signs.includes(item)
+}
 
-    if (calculatationSteps[i] === undefined || '' || NaN) {
-      calculatationSteps.filter((step) => {
-        return step !== undefined
-      })
-
-      return [...calculatationSteps, ...operations, ...calculatationSteps]
-    }
+const startCalc = (calculationSteps) => {
+  switch (calculationSteps[1]) {
+    case '+':
+      return Number(calculationSteps[0]) + Number(calculationSteps[2])
+    case '-':
+      return Number(calculationSteps[0]) - Number(calculationSteps[2])
+    case '*':
+      return Number(calculationSteps[0]) * Number(calculationSteps[2])
+    case '/':
+      return Number(calculationSteps[0]) / Number(calculationSteps[2])
+    default:
+      return NaN
   }
+}
+
+const calculate = (incoming) => {
+  let calculationSteps = []
+
+  incoming.forEach((item) => {
+    if (valItem(item)) {
+      calculationSteps.push(item)
+    }
+  })
+
+  if (calculationSteps.length !== 3) return NaN
+
+  return startCalc(calculationSteps)
 }
 
 
