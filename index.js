@@ -1,29 +1,20 @@
+const calculate = (calculatationSteps) => {
+  const operations = ['+', '-', '*', '/']
 
-const calculate = (calculationSteps) => {
-  let nums = ['2', 4, 10, 23, 12, '13', 2]
-  let operations = ['+', '-', '*', '/']
+  for (let i = 0; i < calculatationSteps.length; i++) {
+    if (calculatationSteps[i] === '') parseInt(calculatationSteps[i])
 
+    if (calculatationSteps[i] === null) calculatationSteps = 0
 
-  if (calculationSteps[0] === '2') {
-    let answer = Number(nums[0]) * nums[1]
+    if (calculatationSteps[i] === undefined || '' || NaN) {
+      calculatationSteps.filter((step) => {
+        return step !== undefined
+      })
 
-    return answer
-  }
-  if (calculationSteps[2] === null) {
-    let answer = nums[2] + calculationSteps[2]
-
-    return answer
-  }
-  if ((calculationSteps[0]) || (calculationSteps[1]) === undefined) {
-    let answer = nums[3] - nums[4]
-
-    return answer
-  }
-
-
-  if ((calculationSteps[0, 1, 2, 3]) !== operations) {
-    return NaN
+      return [...calculatationSteps, ...operations, ...calculatationSteps]
+    }
   }
 }
+
 
 module.exports = calculate
